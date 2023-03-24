@@ -57,3 +57,12 @@ def main():
 
 
 main()
+
+
+def print_by_date(inp_date): #My function
+    dict_collection = previous_orders()
+    print("The items ordered on", inp_date, "are:", end=" ")
+    print(dict_collection[inp_date])
+
+user_date = input("enter the date-month-year:")
+print_by_date(user_date)
