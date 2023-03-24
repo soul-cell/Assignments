@@ -1,3 +1,4 @@
+from datetime import date, datetime
 if __name__ == "__main__":
     with open("sheet.csv", "r") as f:
         l1 = [i.strip("\n").split(',') for i in f]
@@ -78,3 +79,19 @@ def main():
 main()
 
 
+
+def place_order():
+    #global today
+    user_input = input("Enter your comma(,) separated Order: ")
+    my_order = [item for item in user_input.split(",")]
+    today = date.today()
+    time = datetime.now()
+    print(f"Your Order is placed! Date:{time}s ")
+    adder = input("Do you want to add more!, type : (yes/no): ")
+    if adder == "yes":
+        add = input("Enter your comma(,) separated  Order/s: ")
+        new = [new for new in add.split(",")]
+        my_order.extend(new)
+        print(f"New item/s added,Order Placed!,Date:{time}s")
+
+    previous_order(today,my_order)
