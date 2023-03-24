@@ -14,50 +14,46 @@ if __name__ == "__main__":
         print(d1)
 
 
-
-# Menu option is edited by jayasivan
-
-
-def View_Menu():
-    print("1.Filter\n2.All_Items\n3.Exit")
-    choice = int(input("Enter The Choice: "))
-    if choice == 1:
-        return Filter()
-    if choice == 2:
-        "Code for get all item"
-    if choice == 3:
-        return main()
-
-
-def Filter():
-    print("1.Edible\n2.Non Edible")
-    choice = int(input("Enter The Choice: "))
-    if choice == 1:
-        "Code for get edible"
-    if choice == 2:
-        "Code for get Non_edible"
-
-
-def Place_Order():  # Code for Place Order
+def filter_func():
     return
 
 
-def Previous_Order():  # Code for get Previous order
+def view_menu():
+    print(f"Menu\n{'-'*20}")
+    print("1.Filter\n2.All_Items\n3.Exit")
+    choice = int(input("Enter The Choice: "))
+    if choice == 1:
+        filter_func()
+    elif choice == 2:
+        print(f1)
+    elif choice == 3:
+        print("exit")
+    else:
+        print("exit")
+
+
+# Code for Place Order
+def place_order():
+    return
+
+
+# Code for get Previous order
+def previous_order():
     return
 
 
 def main():
-    print("1.View Menu\n2.Place Orders\n3.Previous Orders\n4.Exit")
-    choice = int(input("Enter The Choice: "))
-    if choice == 1:
-        View_Menu()
-    if choice == 2:
-        Place_Order()
-    if choice == 3:
-        Previous_Order()
-    if choice == 4:
+    print(f"menu\n{'-'*20}")
+    print("1.View Menu\n2.Place Order\n3.Previous Order\n4.Exit")
+    select = int(input("Enter The Choice: "))
+    if select == 1:
+        view_menu()
+    if select == 2:
+        place_order()
+    if select == 3:
+        previous_order()
+    if select == 4:
         print("Thanks For Coming!")
 
 
 main()
-
