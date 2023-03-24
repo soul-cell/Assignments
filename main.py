@@ -14,6 +14,8 @@ if __name__ == "__main__":
         d1 = {"edible": ed, "non-edible": ned}
         print(d1)
 
+from datetime import date
+
 
 def filter_func():
     print("Enter the choice of product:\n 1.Edible \n 2.Non-Edible")
@@ -103,7 +105,7 @@ def main():
     if select == 2:
         place_order()
     if select == 3:
-        previous_order()
+        previous_orders(x, order1)
     if select == 4:
         print("Thanks For Coming!")
 
