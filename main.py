@@ -20,7 +20,7 @@ def filter_func():
 
 def view_menu():
     print(f"Menu\n{'-'*20}")
-    print("1.Filter\n2.All_Items\n3.Exit")
+    print("1.Filters\n2.All_Items\n3.Exit")
     choice = int(input("Enter The Choice: "))
     if choice == 1:
         filter_func()
@@ -44,7 +44,7 @@ def previous_order():
 
 def main():
     print(f"menu\n{'-'*20}")
-    print("1.View Menu\n2.Place Order\n3.Previous Order\n4.Exit")
+    print("1.View Menu\n2.Place Orders\n3.Previous Orders\n4.Exit")
     select = int(input("Enter The Choice: "))
     if select == 1:
         view_menu()
