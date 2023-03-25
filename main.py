@@ -81,8 +81,17 @@ user_date = input("enter the date-month-year:")
 print_by_date(user_date)
 
 # Code for get Previous order
-def previous_order(x,y):
-    return
+def previous_orders(d, orders):
+    if d not in prev_dict:
+        prev_dict[d] = orders
+    else:
+        prev_dict[d] = prev_dict[d] + orders
+    print(prev_dict)
+
+
+prev_dict = {}
+x = str(date.today())
+order1 = ["apple", 'orange']
 
 
 def main():
