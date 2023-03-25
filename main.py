@@ -15,8 +15,20 @@ if __name__ == "__main__":
 
 
 def filter_func():
-    return
-
+    print("Enter the choice of product:\n 1.Edible \n 2.Non-Edible")
+    user_input=input("Enter the choice: ")
+    if user_input==1:
+        for keys,value in d1["edible"].items():
+            print(keys)
+            print("-------------")
+            for i in range(len(value)):
+                print(i+1,value[i])
+    elif user_input==2:
+        for keys,value in d1["non-edible"].items():
+            print(keys)
+            print("-------------")
+            for i in range(len(value)):
+                print(i+1,value[i])
 
 def view_menu():
     print(f"Menu\n{'-'*20}")
@@ -36,6 +48,13 @@ def view_menu():
 def place_order():
     return
 
+def print_by_date(inp_date): #My function
+    dict_collection = previous_orders()
+    print("The items ordered on", inp_date, "are:", end=" ")
+    print(dict_collection[inp_date])
+
+user_date = input("enter the date-month-year:")
+print_by_date(user_date)
 
 # Code for get Previous order
 def previous_order():
@@ -59,10 +78,3 @@ def main():
 main()
 
 
-def print_by_date(inp_date): #My function
-    dict_collection = previous_orders()
-    print("The items ordered on", inp_date, "are:", end=" ")
-    print(dict_collection[inp_date])
-
-user_date = input("enter the date-month-year:")
-print_by_date(user_date)
