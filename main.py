@@ -47,7 +47,30 @@ def view_menu():
 
 # Code for Place Order
 def place_order():
-    return
+    #global today
+    user_input_1 = input("Enter your comma(,) separated Order: ")
+    my_order = [item for item in user_input_1.split(",")]
+    today = date.today()
+    time = datetime.now()
+    print(f"Your Order is placed! Date:{time}s ")
+    adder = input("Do you want to add more!, type : (yes/no): ")
+    if adder == "yes":
+        add = input("Enter your comma(,) separated  Order/s: ")
+        new = [new for new in add.split(",")]
+        my_order.extend(new)
+        print(f"New item/s added,Order Placed!,Date:{time}s")
+    valid_order = []
+    for order in my_order:
+        for dic in d1.values():
+            for key, value in dic.items():
+                if order in value:
+                    print(f"{order} in {key}")
+                    valid_order.append(order)
+    for order in my_order:
+        if order not in valid_order:
+            print(f"{order} is  an incorrect product name/unavailable product.")
+
+    previous_order(today,valid_order)
 
 def print_by_date(inp_date): #My function
     dict_collection = previous_orders()
@@ -58,7 +81,7 @@ user_date = input("enter the date-month-year:")
 print_by_date(user_date)
 
 # Code for get Previous order
-def previous_order():
+def previous_order(x,y):
     return
 
 
@@ -80,18 +103,3 @@ main()
 
 
 
-def place_order():
-    #global today
-    user_input = input("Enter your comma(,) separated Order: ")
-    my_order = [item for item in user_input.split(",")]
-    today = date.today()
-    time = datetime.now()
-    print(f"Your Order is placed! Date:{time}s ")
-    adder = input("Do you want to add more!, type : (yes/no): ")
-    if adder == "yes":
-        add = input("Enter your comma(,) separated  Order/s: ")
-        new = [new for new in add.split(",")]
-        my_order.extend(new)
-        print(f"New item/s added,Order Placed!,Date:{time}s")
-
-    previous_order(today,my_order)
