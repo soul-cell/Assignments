@@ -90,6 +90,16 @@ def previous_orders(d, orders):
         prev_dict[d] = prev_dict[d] + orders
     print(prev_dict)
 
+def viewall_items():
+    for i, j in d1.items():
+        print(i.upper())
+        print("-----------------------")
+        for k, v in j.items():
+            print(k)
+            print("------------------")
+            for data in range(len(v)):
+                print(data + 1, v[data])
+
 
 prev_dict = {}
 x = str(date.today())
