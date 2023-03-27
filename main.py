@@ -47,10 +47,7 @@ def view_menu():
     main()
 
 
-# Code for Place Order
 def place_order():
-    # global my_order
-    # global today
     user_input_1 = input("Enter your comma(,) separated Order: ")
     my_order = [items for items in user_input_1.split(",")]
     today = date.today()
@@ -72,7 +69,7 @@ def place_order():
     for order in my_order:
         if order not in valid_order:
             print(f"{order} is  an incorrect product name/unavailable product.")
-    previous_orders(today, my_order)
+    previous_orders(str(today), my_order)
     main()
 
 
