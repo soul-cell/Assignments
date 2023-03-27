@@ -47,25 +47,32 @@ def view_menu():
     main()
 
 
+
+
 def place_order():
-    user_input_1 = input("Enter your comma(,) separated Order: ")
-    my_order = [items for items in user_input_1.split(",")]
+    def get_order():
+        user_input_1 = input("Enter your comma(,) separated Order: ")
+        my_order = [items for items in user_input_1.split(",")]
+        time = datetime.now()
+        print(f"Your Order is placed! Date:{time} s ")
+        return my_order
+
+    goods=get_order()
     today = date.today()
-    time = datetime.now()
-    print(f"Your Order is placed! Date:{time}s ")
-    adder = input("Do you want to add more!, type : (yes/no): ")
+    adder = input("Do you want to add more!, type : (yes/no): ").lower()
     if adder == "yes":
-        add = input("Enter your comma(,) separated  Order/s: ")
-        new = [new for new in add.split(",")]
-        my_order.extend(new)
-        print(f"New item/s added,Order Placed!,Date:{time}s")
+        add=get_order()
+        my_order=goods+add
+    else:
+        my_order=goods
     valid_order = []
-    for order in my_order:
+    i=0
+    while i<len(my_order):
         for dic in d1.values():
             for key, val in dic.items():
-                if order in val:
-                    print(f"{order} in {key}")
-                    valid_order.append(order)
+                if my_order[i] in val:
+                    valid_order.append(my_order[i])
+        i+=1
     for order in my_order:
         if order not in valid_order:
             print(f"{order} is  an incorrect product name/unavailable product.")
