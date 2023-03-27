@@ -13,8 +13,8 @@ if __name__ == "__main__":
         ned = {i: f1[i] for i in f1 if i in ['Personal care', 'Cleaning products', 'Baby stuff']}
         d1 = {"edible": ed, "non-edible": ned}
         print(d1)
+        dict_collection={}
 
-from datetime import date
 
 
 def filter_func():
@@ -32,6 +32,7 @@ def filter_func():
             print("-------------")
             for i in range(len(value)):
                 print(i+1,value[i])
+    main()
 
 def view_menu():
     print(f"Menu\n{'-'*20}")
@@ -45,6 +46,7 @@ def view_menu():
         print("exit")
     else:
         print("exit")
+    main()
 
 
 # Code for Place Order
@@ -71,24 +73,23 @@ def place_order():
     for order in my_order:
         if order not in valid_order:
             print(f"{order} is  an incorrect product name/unavailable product.")
+    main()
 
-    previous_order(today,valid_order)
+
+def previous_orders(d, orders):
+    if d not in dict_collection:
+        dict_collection[d] = orders
+    else:
+        dict_collection[d] = dict_collection[d] + orders
+    print(dict_collection)
+    main()
+
 
 def print_by_date(inp_date): #My function
-    dict_collection = previous_orders()
     print("The items ordered on", inp_date, "are:", end=" ")
     print(dict_collection[inp_date])
+    main()
 
-user_date = input("enter the date-month-year:")
-print_by_date(user_date)
-
-# Code for get Previous order
-def previous_orders(d, orders):
-    if d not in prev_dict:
-        prev_dict[d] = orders
-    else:
-        prev_dict[d] = prev_dict[d] + orders
-    print(prev_dict)
 
 def viewall_items():
     for i, j in d1.items():
@@ -99,24 +100,23 @@ def viewall_items():
             print("------------------")
             for data in range(len(v)):
                 print(data + 1, v[data])
-
-
-prev_dict = {}
-x = str(date.today())
-order1 = ["apple", 'orange']
+    main()
 
 
 def main():
     print(f"menu\n{'-'*20}")
-    print("1.View Menu\n2.Place Orders\n3.Previous Orders\n4.Exit")
+    print("1.View Menu\n2.Place Orders\n3.Previous Orders\n4.Print by particular date\n5.Exit")
     select = int(input("Enter The Choice: "))
     if select == 1:
         view_menu()
-    if select == 2:
+    elif select == 2:
         place_order()
-    if select == 3:
+    elif select == 3:
         previous_orders(x, order1)
-    if select == 4:
+    elif select == 4:
+        user_date = input("enter the date-month-year:")
+        print_by_date(user_date)
+    else:
         print("Thanks For Coming!")
 
 
