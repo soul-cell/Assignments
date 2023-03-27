@@ -69,14 +69,14 @@ def place_order():
     i=0
     while i<len(my_order):
         for dic in d1.values():
-            for key, val in dic.items():
+            for val in dic.values():
                 if my_order[i] in val:
                     valid_order.append(my_order[i])
         i+=1
     for order in my_order:
         if order not in valid_order:
             print(f"{order} is  an incorrect product name/unavailable product.")
-    previous_orders(str(today), my_order)
+    previous_orders(str(today), valid_order)
     main()
 
 
