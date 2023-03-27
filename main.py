@@ -114,7 +114,7 @@ def main():
     elif select == 3:
         previous_orders(x, order1)
     elif select == 4:
-        user_date = input("enter the date-month-year:")
+        user_date = input("enter the year:month:date:")
         print_by_date(user_date)
     else:
         print("Thanks For Coming!")
