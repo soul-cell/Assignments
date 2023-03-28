@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
 def filter_func():
     print("Enter the choice of product:\n 1.Edible \n 2.Non-Edible")
-    user_input = input("Enter the choice: ")
+    user_input = int(input("Enter the choice: "))
     if user_input == 1:
         for keys, val in d1["edible"].items():
             print(keys)
